@@ -27,9 +27,14 @@ const urls =
 
 puppeteer.launch({headless: false}).then(async (browser) => {
     const page = await browser.newPage();
+    var example = 'https://www.tokyobitcoiner.com/hcaptcha';
+    console.log("Solving captcha...");
+    await page.goto(example);
+    await page.solveRecaptchas();
+    console.log("Captcha Solved!");
     //var url = 'https://www.indeed.com/jobs?q=Machine+Learning+Engineer&l=San+Francisco&limit=1&sort=date&fromage=last';
-    //var example = 'https://www.tokyobitcoiner.com/hcaptcha';
-    while(true){
+    
+    /*while(true){
         for(let i =0; i < urls.length; i++){
             //const page = await browser.newPage();
             await page.goto(urls[i]);
@@ -37,14 +42,12 @@ puppeteer.launch({headless: false}).then(async (browser) => {
             console.log("Solving captcha...");
             await page.solveRecaptchas();
             console.log("Captcha Solved!");
-            //
-            //console.log("Delay for 5 sec");
             await page.$eval('input[type=submit]', el => el.click());
-            //await page.goto(urls[i]);
             await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });     
             await page.waitForTimeout(1000);
         }
-    }
+    }*/
+
     //await page.goto(url);
     //console.log("Solving captcha...");
     //await page.solveRecaptchas();
