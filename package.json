@@ -1,0 +1,13 @@
+{
+  "name": "captcha",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^11.0.0",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-recaptcha": "^3.5.0",
+    "python-shell": "^3.0.1"
+  }
+}
